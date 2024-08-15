@@ -6,7 +6,6 @@ import { AuthGuard } from '@nestjs/passport';
  * This guard uses Passport.js to handle JWT authentication.
  */
 export class JwtAuthGuard extends AuthGuard('jwt') {
-
   /**
    * Determines if the request is allowed to proceed.
    */

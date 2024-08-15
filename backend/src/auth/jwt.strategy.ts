@@ -5,7 +5,7 @@ import { DatabaseService } from 'src/database/database.service';
 
 /**
  * JwtStrategy
- * 
+ *
  * Implements JWT-based authentication strategy using Passport.
  */
 @Injectable()
@@ -20,7 +20,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 
   /**
    * Validates the JWT payload and checks if the user exists in the database.
-   * 
+   *
    * @param payload - Contains the user ID and email from the JWT token.
    * @returns The user object if found; otherwise, throws an error.
    */

@@ -14,26 +14,27 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  policies  Policy[]
-  claims    Claim[]
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  password String
+  policies Policy[]
+  claims   Claim[]
 }
 
 model Policy {
-  id             Int      @id @default(autoincrement())
-  policyNumber   Int      @unique
-  provider       String
+  id              Int     @id @default(autoincrement())
+  policyNumber    BigInt  @unique
+  provider        String
   coverageDetails String
-  userId         Int
-  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  claims         Claim[]
+  userId          Int
+  user            User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  claims          Claim[]
 }
+
 model Claim {
   id            Int      @id @default(autoincrement())
   claimDetails  String
-  digitalBills  String[]
+  digitalBills  String
   status        String
   policyId      Int
   policy        Policy   @relation(fields: [policyId], references: [id], onDelete: Cascade)

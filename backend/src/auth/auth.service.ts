@@ -11,7 +11,7 @@ import { JwtService } from '@nestjs/jwt';
 
 /**
  * AuthService
- * 
+ *
  * Handles authentication operations such as login and registration of users.
  */
 @Injectable()
@@ -23,7 +23,7 @@ export class AuthService {
 
   /**
    * Authenticates a user based on login data and issues a JWT token.
-   * 
+   *
    * @param loginData - Contains email and password for login.
    * @returns An object containing the user ID and JWT token.
    * @throws NotFoundException - If the user is not found or the password is incorrect.
@@ -49,7 +49,7 @@ export class AuthService {
 
   /**
    * Registers a new user by creating an entry in the database and issuing a JWT token.
-   * 
+   *
    * @param registerData - Contains user details for registration.
    * @returns An object containing the new user ID and JWT token.
    * @throws BadGatewayException - If a user with the provided email already exists.

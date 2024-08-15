@@ -7,8 +7,8 @@ import { TokenBlacklistModule } from 'src/token-blacklist/token-blacklist.module
 @Module({
   // Modules imported into this module
   imports: [
-    DatabaseModule,          // Provides database access
-    TokenBlacklistModule,    // Manages token blacklisting
+    DatabaseModule, // Provides database access
+    TokenBlacklistModule, // Manages token blacklisting
   ],
   // Controllers to handle incoming requests
   controllers: [UserController],

@@ -9,7 +9,7 @@ import { DatabaseModule } from '../database/database.module';
 
 /**
  * AuthModule
- * 
+ *
  * This module handles authentication using JWT, integrates Passport.js,
  * and manages authentication-related services and controllers.
  */

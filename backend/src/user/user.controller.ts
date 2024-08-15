@@ -6,7 +6,7 @@ import { UserProfileDto } from './dto/user-profile.dto';
 import { UserLogoutDto } from './dto/user-logout.dto';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('User') // Tag for Swagger documentation
+@ApiTags('User Account Management') // Tag for Swagger documentation
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
