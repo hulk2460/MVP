@@ -1,3 +1,19 @@
+<script>
+// @ts-nocheck
+
+  import{authStore}from "$lib/stores/authStores"
+  let loggedIn;
+  let message=""
+// Subscribe to authStore
+authStore.subscribe((auth) => {
+  loggedIn = auth.isLoggedIn;
+});
+const handleLogout = () => {
+    authStore.logout();
+    localStorage.setItem('logoutSuccess', 'true');
+    window.location.href = '/login'; // Redirect to home page
+  };
+</script>
 <nav class="bg-lime-500 place-items-center">
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5"
@@ -53,9 +69,11 @@
             </a
           >
         </li>
+        {#if !loggedIn}
         <li>
+
           <a
-            href="/profiles"
+            href="/login"
             class="block py-2 px-3 text-grey-400 text-white font-extrabold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-400 md:p-0"
             >Login</a
           >
@@ -67,7 +85,7 @@
             >Register</a
           >
         </li>
-        
+        {:else}
         <li>
           <a
             href="/dashboard"
@@ -76,7 +94,15 @@
             >Dashboard</a
           >
         </li>
-       
+        <li>
+          <button
+          on:click={handleLogout}
+            
+            class="block py-2 px-3 text-grey-400 rounded font-extrabold md:text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-400 md:p-0"
+            >Logout</button
+          >
+        </li>
+       {/if}
       </ul>
   
   </div>
